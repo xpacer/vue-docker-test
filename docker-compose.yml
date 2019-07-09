@@ -3,9 +3,7 @@ services:
   vue-docker-test:
     build: .
     ports:
-        - 2435:8080
-        - 2436:8000
-    volumes:
-        - ./:/app
+      - 2435:8080
+      - 2436:8000
     container_name: vue-docker-test
     tty: true
