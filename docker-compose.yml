@@ -8,4 +8,6 @@ services:
     volumes:
       - .:/app
     container_name: vue-docker-test
+    env_file:
+      - ./.env.local
     tty: true

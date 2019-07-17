@@ -2,7 +2,10 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <p>
-      This is a Vue Docker Test for Development.
+      This is a Vue Docker Test for {{environment}}.
+    </p>
+    <p>
+      App Name: {{app_name}}.
     </p>
   </div>
 </template>
@@ -12,6 +15,17 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  data() {
+    return {
+      environment: process.env.NODE_ENV,
+      app_name: process.env.VUE_APP_NAME
+    }
+   
+  },
+  created() {
+    console.log(process.env.NODE_ENV);
+    // this.environment = process.env.NODE_ENV;
   }
 }
 </script>
